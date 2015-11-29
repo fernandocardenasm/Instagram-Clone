@@ -115,11 +115,64 @@
                     <connections>
                         <outlet property="password" destination="ltQ-oK-Bsi" id="Dsf-Ny-Xci"/>
                         <outlet property="username" destination="IEX-PW-3CQ" id="91f-uz-46i"/>
+                        <segue destination="EZW-6h-Oxj" kind="show" identifier="login" id="Sia-BK-Ydl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="388" y="241"/>
+            <point key="canvasLocation" x="339" y="161"/>
+        </scene>
+        <!--User List-->
+        <scene sceneID="gOR-Is-PNN">
+            <objects>
+                <tableViewController id="EZW-6h-Oxj" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3lZ-Ue-MYY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1Jz-4v-l8n">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Jz-4v-l8n" id="4hz-bj-1Ss">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EZW-6h-Oxj" id="GzZ-n5-l2P"/>
+                            <outlet property="delegate" destination="EZW-6h-Oxj" id="SsQ-tR-YX7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="User List" id="u52-GW-bnA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dWF-7o-BAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="-587"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="brD-C5-UvT">
+            <objects>
+                <navigationController id="Uhe-xK-BSs" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rcl-gT-Fn1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EZW-6h-Oxj" kind="relationship" relationship="rootViewController" id="nhp-Zw-7yC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wf7-6c-lPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-56" y="-587"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nhp-Zw-7yC"/>
+    </inferredMetricsTieBreakers>
 </document>

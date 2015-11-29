@@ -54,7 +54,7 @@ class ViewController: UIViewController{
                     // Show the errorString somewhere and let the user try again.
                 } else {
                     // Hooray! Let them use the app now.
-                    
+                    self.performSegueWithIdentifier("login", sender: self)
                 }
                 self.activityIndicator.stopAnimating()
                 UIApplication.sharedApplication().endIgnoringInteractionEvents()
@@ -71,6 +71,7 @@ class ViewController: UIViewController{
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 // Do stuff after successful login.
+                self.performSegueWithIdentifier("login", sender: self)
             } else {
                 // The login failed. Check error to see why.
                 
@@ -94,6 +95,12 @@ class ViewController: UIViewController{
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         view.addSubview(activityIndicator)
 
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if PFUser.currentUser() != nil {
+            self.performSegueWithIdentifier("login", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
